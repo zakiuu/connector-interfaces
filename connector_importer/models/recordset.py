@@ -240,7 +240,7 @@ class ImportRecordset(models.Model, JobRelatedMixin):
         return self.import_type_id.available_models()
 
     @api.multi
-    @job(default_channel='root.import')
+    @job
     def import_recordset(self):
         """This job will import a recordset."""
         with self.backend_id.work_on(self._name) as work:
