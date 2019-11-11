@@ -333,8 +333,9 @@ class RecordImporter(Component):
                     raise err
                 continue
 
-        # update report
-        self._do_report()
+        # TODO: fix this later, for now we need to remove it,
+        # otherwise we won't be able to run multiple import in same time
+        # self._do_report()
 
         # log chunk finished
         msg = ' '.join([
